@@ -249,6 +249,7 @@ style="display:none;visibility:hidden"></iframe></noscript>
 
           </tbody>
         </table>
+
                 <div class="payment-options-block">
           <div class="payment-options-header">
             <p class="payment-options-eyebrow">Flexible Financing</p>
@@ -973,6 +974,8 @@ style="display:none;visibility:hidden"></iframe></noscript>
   // Fees Structure Table JS:
   const feeTabs = document.querySelectorAll(".fees-tab");
   const contentArea = document.getElementById("contentArea");
+  const paymentOptionsEl = contentArea.querySelector(".payment-options-block");
+  const paymentOptionsHTML = paymentOptionsEl ? paymentOptionsEl.outerHTML : "";
 
   feeTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -1008,9 +1011,9 @@ style="display:none;visibility:hidden"></iframe></noscript>
               <td>INR 1,00,000</td>
               <td>By 15th Feb 2027</td>
             </tr>
-            
           </tbody>
         </table>
+        ${paymentOptionsHTML}
       `;
       }
 
